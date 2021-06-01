@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09</title>
+</head>
+
+<body>
+    <h3>form 요소 작성하기</h3>
+    <form action="save.html" method="POST">
+        <div>
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" />
+        </div>
+        <div>
+            <label for="pwd">비밀번호</label>
+            <input type="password" name="pwd" id="pwd" />
+        </div>
+        <div>
+            <button type="submit">로그인</button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+    <!--default method는 get방식. '?'뒷부분은 쿼리이며, '&'로 이어붙이기 가능-->
+    <a href="save.html?id=asdf&pwd=123456&email=a@a.a">save</a>
+</body>
+
+</html>

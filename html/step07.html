@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step7</title>
+    <style>
+        table {
+            border : 1px dotted black;
+            border-collapse: collapse;
+        }
+        th {
+            border : 1px dotted black;
+        }
+        td {
+            border : 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Table 형식으로 정보 출력</h3>
+    <table>
+        <caption>친구목록</caption>
+        <colgroup>
+            <col width="100px"/> <!--첫 번째 th 크기-->
+            <col width="300px"/> <!--두 번째 th 크기-->
+            <col width="200px"/> <!--세 번째 th 크기-->
+        </colgroup>
+        <thead>
+            <th>번호</th>
+            <th>이름</th>
+            <th>주소</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td colspan="2">손정의(일본)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>비탈릭 부테린</td>
+                <td rowspan="2">서양</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>케르스티 칼률라이드</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
