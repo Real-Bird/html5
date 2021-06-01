@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        /*
+        .container{
+            background-color: aqua;
+        }
+        */
+        /* .container의 자손 중에서 p요소 선택 */
+        /*.container p{
+            background-color: cadetblue;
+        }*/
+        /* .container의 자식 중에서 p요소 선택 */
+        /* .container > p{
+            background-color: cadetblue;
+        } */
+        /* .container의 형제 중에서 바로 옆의 p요소 선택 */
+        /* .container + p{
+            background-color: cadetblue;
+        } */
+        /* .container의 모든 형제 중에 모든 p요소 선택 */
+        .container ~ p{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <!--siblig은 위의 인접을 형제로 취급하지 않음-->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div>
+            <p>Fusce iaculis justo ac fringilla suscipit.</p>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</body>
+</html>
