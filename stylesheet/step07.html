@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo class & element</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+
+        .box:hover {
+            background-color: yellow;
+            /*마우스 올리면 배경색 변화*/
+        }
+
+        input:focus {
+            background-color: pink;
+            /*입력창에 커서 올라가면 배경색 변화*/
+        }
+
+        button:active {
+            background-color: coral;
+            /*버튼 활성화 시 배경색 변화*/
+        }
+
+        a {
+            text-decoration: none;
+            /*링크 밑줄 제거*/
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /*마우스 올리면 링크 밑줄 표시*/
+        }
+
+        a:link {
+            color: red;
+            /*처음 방문 링크 글자색*/
+        }
+
+        a:visited {
+            color: green;
+            /*방문한 링크 글자색*/
+        }
+
+        #one::first-letter {
+            font-weight: bold;
+            color: red;
+        }
+
+        #first::first-line {
+            background-color: yellow;
+        }
+
+        .quote::before {
+            content: "'";
+            color: red;
+        }
+
+        .quote::after {
+            content: "'";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <input type="text" />
+    <button>버튼</button>
+    <a href="https://facebook.com">훼이스북</a>
+    <p id="one">Duis egestas tortor in urna dapibus, placerat ultricies tellus hendrerit.</p>
+    <p id="first">Duis egestas tortor in urna dapibus, placerat ultricies tellus hendrerit.</p>
+    <p class="quote">Duis egestas tortor in urna dapibus, placerat ultricies tellus hendrerit.</p>
+</body>
+
+</html>

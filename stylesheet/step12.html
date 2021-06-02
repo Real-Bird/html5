@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <style>
+        #one {
+            display: none;
+        }
+
+        #two {
+            display: inline;
+            margin: 500px 10px;
+            padding: 100px 10px;
+        }
+        #three{
+            display: inline-block;
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>display 속성 테스트</h1>
+    <button id="showBtn">Push me!</button>
+    <p id="one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel magna ac orci tempus laoreet.
+        Suspendisse potenti. Cras at semper magna. Aenean in tortor mattis, commodo eros sed, pretium eros. Etiam et
+        elit id sem laoreet eleifend. Vivamus velit massa, scelerisque a dui quis, tempus faucibus arcu. Aenean
+        consequat dui in urna aliquam, quis eleifend augue viverra. Nulla vel hendrerit nisi. Quisque dictum in elit in
+        dignissim. Nam sed urna id enim vestibulum aliquet eu nec magna. Etiam pellentesque tortor ut sem accumsan
+        vulputate. Ut sed auctor felis.</p>
+    <hr>
+
+    <h1>inline vs inline-block</h1>
+    <div>Lorem ipsum dolor sit amet</div>
+    <div id="two">Lorem ipsum dolor sit amet</div>
+    <div id="two">consectetur adipiscing elit.</div>
+    <div id="three">Lorem ipsum dolor sit amet</div>
+    <div>Lorem ipsum dolor sit amet</div>
+    <script>
+        let isOn = true;
+        document.getElementById("showBtn").addEventListener("click", function () {
+            if (isOn) {
+                document.getElementById("one").style.display = "block";
+                isOn = false;
+            } else {
+                document.getElementById("one").style.display = "none";
+                isOn = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

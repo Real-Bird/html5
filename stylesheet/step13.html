@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        img {
+            width: 100px;
+            position: absolute;
+        }
+        #one {
+            left: 20px;
+            top: 20px;
+            z-index: 10000;
+        }
+        #two {
+            left: 40px;
+            top: 40px;
+            z-index: 1000;
+        }
+        #three {
+            left: 60px;
+            top: 60px;
+            z-index: 100;
+        }
+        
+    </style>
+</head>
+<body>
+    <img id="one" src="/images/ace.png">
+    <img id="two" src="/images/boy.png">
+    <img id="three" src="/images/girl.png">
+</body>
+</html>
