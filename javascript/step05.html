@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean</title>
+    <script>
+        let isRun = false;
+        let isWait = false;
+        let isSmaller = 10 < 5;
+        let isEqual = 10 == 100;
+        let isDifference = 10 != 10;
+        if(isRun){
+            console.log("달리는 중");
+        }else{
+            console.log("걷는 중");
+        }
+
+        //falsy value
+        let a = 0;
+        let b = '';
+        let c;
+        let d = (parseInt('abc'));
+        if(b){ //값이 있으면 true, 없으면 false
+            console.log(true);
+        }else{
+            console.log(false)
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

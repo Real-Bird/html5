@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <script>
+        //선언적 함수 - function hoisting
+        test1();
+        function test1(){
+            console.log('javascript function');
+        }
+
+        //함수식
+        //test2(); //function hoisting 불가
+        const test2 = function(){
+            console.log('함수식씨 계십니까?');
+        }
+        test2();
+        //test2의 참조값을 test3 할당
+        const test3 = test2;
+        test3();
+        
+        console.log(typeof test1);
+        console.log(typeof test2);
+        console.log(typeof test3);
+
+        const plus = function(a,b){
+            return a+b; 
+        }
+
+        let c = plus(10, 20);
+        console.log(c);
+        
+        const d = function(){
+            return "hello";
+        }
+        let e = d();
+        console.log(e);
+
+        const getSum = function(num1, num2){
+            console.log(arguments.length);
+            if(arguments.length == 0){
+                num1 = 0;
+                num2 = 0;
+            } else if(arguments.length == 1){
+                num2 = 0;
+            }
+            return num1 + num2;
+        }
+
+        let result = getSum();
+        let result0 = getSum(10);
+        let result1 = getSum(10, 20);
+        let result2 = getSum(10, 20, 30);
+        let result3 = getSum(10, 20, 30, 40);
+        let result4 = getSum(10, 20, 30, 40, 50);
+        
+        console.log(result);
+        console.log(result0);
+        console.log(result1);
+        console.log(result2);
+        console.log(result3);
+        console.log(result4);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

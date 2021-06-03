@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatype</title>
+</head>
+<script>
+    //1. number type
+    let num1 = 10;//int
+    let num2 = 20.1;//float
+    console.log(typeof num1); //number
+    console.log(typeof num2); //number
+
+    //2. string type
+    let myName = 'james';
+    let yourName = "simons";
+    console.log(typeof myName); //string
+
+    //3. boolean type
+    let isRun = true;
+    let isGreater = 10 > 5;
+    console.log(typeof isRun); //boolean
+
+    //4.undefined type 객체는 있되 값이 없음
+    let a;
+    let b = undefined;
+    let c = a + 1;
+    let c1 = a + "1";
+    console.log(typeof a); //undefined
+    console.log(typeof b); //undefined
+    console.log(c); //NaN
+    console.log(c1); //undefined1 <= 문자와 연결
+
+    //5.null -> object 객체조차 없음
+    let d = null;
+    let e = d + 1;
+    let e1 = d + "1";
+    console.log(typeof d); //object
+    console.log(e); //1
+    console.log(e1); //null1 <= 문자와 연결
+
+    console.log(a == d); //true 값만 비교
+    console.log(a === d); //false 값과 자료형까지 비교
+
+    //6. object type => map구조
+    const obj = { num: 1, name: 'jonny', isMan: true };
+    console.log(typeof obj); //object
+
+    //7. array type
+    const names = ['jonny', 'james', 'simons'];
+    console.log(typeof names); //object
+    
+    //8. function type
+    //함수식
+    const f = function(){
+        
+    }
+    f(); //함수 호출
+    console.log(typeof f); //function
+    
+    //선언적 함수
+    function sum(){
+        
+    }
+    sum(); //함수 호출
+    console.log(typeof sum); //function
+</script>
+
+<body>
+
+</body>
+
+</html>
