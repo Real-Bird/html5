@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        //alert('after title');
+        //html page 모두 로딩 후 객체를 올림
+        window.onload = function () {
+            //alert('onload');
+            function send() {
+                alert('전송오나료');
+            }
+
+            //Event Listener 방식(click event)
+            document.getElementById("sendBtn").addEventListener("click", function () {
+                alert('전송오나료2');
+            });
+
+            //Event Listener 방식(key event)
+            document.getElementById("inputMsg").addEventListener("keydown", function (event) {
+                //keycode 13 : enter
+                if (event.keyCode == 13) {
+                    alert(document.getElementById("inputMsg").value);
+                    document.getElementById("inputMsg").value = '';
+                }
+            });
+
+            document.getElementById("inputMsg").focus();
+        }
+    </script>
+</head>
+
+<body>
+    <!--inline event-->
+    <button onclick="javascript:send();">전송1</button>
+
+    <!--listener event-->
+    <button id="sendBtn">전송2</button>
+    <input type="text" id="inputMsg">
+</body>
+<!--
+    <script>
+        alert('after body');
+    </script>
+-->
+
+</html>

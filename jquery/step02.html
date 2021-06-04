@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //$('div').addClass('s'); //element selector
+            //$('.third.sung').addClass('s'); //class select
+            $('#root').addClass('s'); //id selector
+
+            // document.getElementById("btn").addEventListener("click", function () {
+            //     document.getElementById("root").style.display = "block";
+            //     $('#root').css('display', 'block');
+            // });
+
+            // $('#btn').click(function () {
+            //     $('#root').css('display', 'block');
+            // })
+
+            // $('#root > div').addClass('s'); //child selector
+            //$('#root div').addClass('s'); //descendant selector
+            //$('li:nth-child(2)').addClass('s'); //1부터 시작
+            //$('li:nth(2)').addClass('s'); //0부터 시작
+            //$('li:even').addClass('s'); //0부터 시작
+            //$('li:gt(3)').addClass('s'); //0부터 시작, 3보다 큰 요소
+            //$('li:lt(3)').addClass('s'); //0부터 시작, 3보다 작은 요소
+        });
+    </script>
+    <style type="text/css">
+        #panel div,
+        #panel ul,
+        #panel li,
+        #header {
+            border: 2px solid rgb(48, 31, 31);
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #message {
+            width: 98%;
+            height: auto;
+            font-size: 20px;
+
+            padding: 14px 10px;
+            border: 1px solid #999;
+
+        }
+
+
+        #panel ul {
+            list-style: none;
+        }
+
+        #panel .s {
+            border: 2px solid red;
+            background-color: yellow;
+        }
+
+        .remov {
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="header">
+        <button id="btn">show me</button>
+    </div> -->
+    <div id="panel">
+        <div id="root">
+            div id="root""
+            <div id="first">
+                div id="first"
+            </div>
+            <div>
+                div
+                <ul>
+                    ul
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                </ul>
+                <div class="third sung">div class="third sung"</div>
+            </div>
+            <div>div</div>
+
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        /*
+            동적으로 script 코드를 추가하는 방법
+        */
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
+
+
+
+</body>
+
+</html>

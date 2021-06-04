@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event-mouse</title>
+    <style>
+        #myBox {
+            width : 200px;
+            height : 200px;
+            border : 1px solid red;
+            cursor : pointer;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const divObj = document.getElementById("myBox");
+            divObj.addEventListener("mouseover",function(){
+                this.style.backgroundColor = "gray";
+            });
+
+            divObj.addEventListener("mouseout",function(){
+                this.style.backgroundColor = "white";
+            });
+
+            divObj.addEventListener("mousedown",function(){
+                this.style.backgroundColor = "red";
+            });
+
+            divObj.addEventListener("mouseup",function(){
+                this.style.backgroundColor = "gray";
+            });
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 이벤트</h3>
+    <div id="myBox">box</div>
+</body>
+</html>
