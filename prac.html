@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice page</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $('.outer-menu').css('float','left');
+            // $('.outer-menu').hover(function(){
+            //     $(this).css('color', 'red');
+            // }, function(){
+            //     $(this).css('color','black');
+            // });
+
+            $('.outer-menu').hover(function(){
+                $('.inner-menu').css('display', 'block');
+            }, function(){
+                $('.inner-menu').css('display', 'none');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <caption>
+            <h1 id="cap">Real-Bird's pages</h1>
+        </caption>
+        <nav>
+            <ul>
+                <li class="outer-menu">A site
+                    <ul class="inner-menu" style="display: none;">
+                        <li>a0</li>
+                        <li>a1</li>
+                        <li>a2</li>
+                        <li>a3</li>
+                    </ul>
+                </li>
+                <li class="outer-menu">B site
+                    <ul class="inner-menu" style="display: none;">
+                        <li>b0</li>
+                        <li>b1</li>
+                        <li>b2</li>
+                        <li>b3</li>
+                    </ul>
+                </li>
+                <li class="outer-menu">C site
+                    <ul class="inner-menu" style="display: none;">
+                        <li>c0</li>
+                        <li>c1</li>
+                        <li>c2</li>
+                        <li>c3</li>
+                    </ul>
+                </li>
+                <li class="outer-menu">D site
+                    <ul class="inner-menu" style="display: none;">
+                        <li>d0</li>
+                        <li>d1</li>
+                        <li>d2</li>
+                        <li>d3</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div id="main">
+        <div id="main-01">
+            <h4 class="main-head">Lorem ipsum dolor sit amet</h4>
+            <p id="main-b1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et lacus viverra, semper
+                ante quis, tempus justo. Donec quis purus sit amet elit consequat pretium eu ac augue. Aenean at elit ut
+                diam egestas bibendum. Donec vitae tortor urna. Phasellus leo velit, lobortis et tristique ac,
+                scelerisque nec nibh. Quisque mi tellus, auctor fringilla condimentum eu, molestie volutpat nunc. Cras
+                at dictum ligula. Nam molestie ornare elit, nec lobortis metus fringilla ac. Cras vitae lacus vel nulla
+                aliquet imperdiet et eu nunc.</p>
+        </div>
+        <div id="main-02">
+            <h4 class="main-head">Sed molestie quis lacus id facilisis</h4>
+            <p id="main-b2">Sed molestie quis lacus id facilisis. Donec finibus metus nec eros consequat luctus. Donec
+                quam felis, consequat in gravida vehicula, varius at neque. Quisque sagittis tellus eget magna tincidunt
+                venenatis. Nullam nec est lacinia, posuere nisl at, posuere lacus. Mauris dapibus iaculis orci ac
+                blandit. Cras laoreet nunc magna, vel feugiat felis facilisis facilisis. Aenean tristique nisl quis
+                facilisis tempor. Donec tempor ac augue non bibendum. Suspendisse eget posuere purus. Cras interdum
+                metus eu nunc sodales tincidunt. Vestibulum pellentesque eget magna non vestibulum.</p>
+        </div>
+    </div>
+    <footer id="foot">
+        <hr>
+        <div id="foot-01">
+            <h6 class="ft-head">ⓒ Real-Bird</h6>
+            <p>email : 안알랴줌</p>
+            <p>tel : 장난전화 즐</p>
+        </div>
+        <div id="foot-02">
+            <h6 class="ft-head">like this</h6>
+            <ul>
+                <li>duck</li>
+                <li>sparrow</li>
+                <li>chicken</li>
+                <li>crow</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
