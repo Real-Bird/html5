@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get jquery ver</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                $.ajax({
+                    url: 'https://kras.kosha.or.kr/health/health_tab02',
+                    method: 'GET',
+                    dataType: 'json',
+                    error: function () {
+                        alert('Error');
+                    }
+                });//end of ajax
+            });//end of event
+        });//end of onloading
+    </script>
+</head>
+
+<body>
+    <button id="btn">가져오기</button>
+    <div id="sel">
+
+    </div>
+</body>
+
+</html>

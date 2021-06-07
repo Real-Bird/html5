@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery manipulation</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        p {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        $(function () {
+            // $('div').prepend('<strong> hi </strong>');
+            // $('<strong> bye </strong>').prependTo('div');
+
+            // $('div').append('<strong> hi </strong>');
+            // $('<strong> bye </strong>').appendTo('div');
+
+            // $('div').after('<strong> hi </strong>');
+            // $('div').before('<strong> bye </strong>');
+
+            //태그 안 먹힘
+            // $('p').text('<strong> JQUERY </strong>'); //텍스트를 수정함
+            // alert($('p').text()); //텍스트 정보를 가져옴
+
+            //태그 먹힘
+            // $('p').html('<strong> JQUERY </strong>');
+            // alert($('p').html());
+
+            $('p').remove();
+            $('div').append('<p>제이쿼리</p>');
+            // $('p').detach();
+            // $('p').empty().text('JQUERY');
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <p> &lt;strong&gt; jQuery &lt;/strong&gt;</p>
+    </div>
+</body>
+
+</html>

@@ -3,30 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>jquery selector</title>
+    <title>jquery traversing</title>
     <script src="../js/jquery-3.6.0.js"></script>
     <script type="text/javascript">
-        $(function () {
-            //$('div').addClass('s'); //element selector
-            //$('.third.sung').addClass('s'); //class select
-            $('#root').addClass('s'); //id selector
+        $(function(){
+            //$('li').eq(0).addClass('s');
+            //$('li').first().addClass('s');
+            //$('li').not(':odd').addClass('s');
+            // $('li').each(function(index, element){
+            //     console.log(index + ',' + $(element).text());
+            // });
+            // $('li').each(function(index){
+            //     console.log(index + ',' + $(this).text());
+            // });
+            // $('#root').children().addClass('s');
+            // $('#root > div').addClass('s');
 
-            // document.getElementById("btn").addEventListener("click", function () {
-            //     document.getElementById("root").style.display = "block";
-            //     $('#root').css('display', 'block');
+            //현재 엘리먼트를 포함해서 가장 가까운 부모 엘리먼트를 찾을 때 사용
+            //$('.second').closest('div').addClass('s');
+            //$('#root').find('li').addClass('s');
+            // $('#root').find('li').first().addClass('s');
+            // $('#root').find('li').first().nextAll().addClass('s');
+            // $('#root').find('li').first().nextAll().remove();
+            // $('#root').find('li').first().nextAll().each(function(index){
+            //     $(this).text('li' + index);
             // });
 
-            // $('#btn').click(function () {
-            //     $('#root').css('display', 'block');
-            // })
+            // $('#root').find('li').parent().addClass('s');
+            // $('#root').find('li').parents().addClass('s');
+            // $('li').eq(2).prev().addClass('s');
+            // $('li').eq(2).prevAll().addClass('s');
+            // $('li').parents().parent().siblings().addClass('s');
+            $('li').eq(2).siblings().addClass('s');
 
-            // $('#root > div').addClass('s'); //child selector
-            //$('#root div').addClass('s'); //descendant selector
-            //$('li:nth-child(2)').addClass('s'); //1부터 시작
-            //$('li:nth(2)').addClass('s'); //0부터 시작
-            //$('li:even').addClass('s'); //0부터 시작
-            //$('li:gt(3)').addClass('s'); //0부터 시작, 3보다 큰 요소
-            //$('li:lt(3)').addClass('s'); //0부터 시작, 3보다 작은 요소
+            
         });
     </script>
     <style type="text/css">
@@ -67,9 +77,6 @@
 </head>
 
 <body>
-    <!-- <div id="header">
-        <button id="btn">show me</button>
-    </div> -->
     <div id="panel">
         <div id="root">
             div id="root""
@@ -85,7 +92,7 @@
                     <li>li</li>
                     <li>li</li>
                     <li>li</li>
-                    <li>li</li>
+                    <li></li>
                 </ul>
                 <div class="third sung">div class="third sung"</div>
             </div>
