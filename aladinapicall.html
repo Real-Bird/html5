@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get jquery ver</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                $.ajax({
+                    url: 'aladinapi.json',
+                    method: 'GET',
+                    dataType: 'json',
+                    error: function () {
+                        alert('Error');
+                    },
+                    success: function (json) {
+
+                        $('#sel').empty();
+                        const itemArray = json.item;
+                        let html = '<table>';
+
+                        html += '<tbody>';
+                        for (const obj of itemArray) {
+                            html += '<tr>';
+                            let title = obj.title;
+                            let cover = obj.cover;
+                            let link = obj.link;
+                            let description = obj.description;
+                            html += "<td><img src=" + cover + "></img></td>"
+                            html += "<td><a href=" + link + ">" + title + "</a></td>";
+                            html += "<td><p>" + description + "</p></td>";
+                            html += '</tr>';
+                        }
+                        html += '</tbody>';
+                        html += '</table>';
+
+                        $('#sel').append(html);
+                    }
+                });//end of ajax
+            });//end of event
+        });//end of onloading
+    </script>
+    <style>
+        #btn {
+            width: 10px 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 1px solid red;
+            position: relative;
+            top: 30px;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+        a {
+            text-decoration: none;
+        }
+        a, p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">가져오기</button>
+    <div id="sel">
+
+    </div>
+</body>
+
+</html>
