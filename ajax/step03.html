@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,22 @@
         $(function () {
             $('#btn').click(function () {
                 $.ajax({
-                    url: 'https://kras.kosha.or.kr/health/health_tab02',
+                    url: 'data.xml',
                     method: 'GET',
-                    dataType: 'json',
+                    dataType: 'xml',
                     error: function () {
                         alert('Error');
+                    },
+                    success: function(xml){
+                        $('#sel').empty();
+                        let html = '<ul>';
+                        $(xml).find('category').find('item').each(function(){
+                            let value = $(this).find('value').text();
+                            let title = $(this).find('title').text();
+                            html += "<li>" + value + ',' + title + "</li>";
+                        });
+                        html += "</ul>";
+                        $("#sel").append(html);
                     }
                 });//end of ajax
             });//end of event
