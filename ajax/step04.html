@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Jsonp</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        //조건1 : json data가 함수로 감싸져 있어야 함
+        //키값으로 call or callback 기능 지원이 안 되면 사용 불가
+        //조건2 : data가 반드시 json 형식이어야 함
+        //xml 형식 사용 불가
+        function calljson(json) {
+            let jsonStr = JSON.stringify(json);
+            $('#sel').append(jsonStr);
+        };
+        $(function () {
+            $('#btn').click(function () {
+                var dScript = document.createElement('script');
+                dScript.src = "http://www.acornacademy.co.kr/blockchain/naver_json.jsp?call=calljson";
+                document.body.appendChild(dScript);
+            });//end of event
+        });//end of onloading
+    </script>
+</head>
+
+<body>
+    <button id="btn">가져오기</button>
+    <div id="sel">
+
+    </div>
+</body>
+
+</html>
