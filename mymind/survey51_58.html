@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>일상 스트레스 설문지</title>
+  </head>
+  <body>
+      <form id="health02Form" action="/health/health_tab02_result" method="post"> 
+          <input type="hidden" id="result_input" name="result_input" value=""> 
+          <div class="health-gender-selector mt20"> 
+           <div id="man_selector"> 
+            <input type="radio" name="gender" id="gender_man" value="0"> <label for="gender_man">남자</label> 
+           </div> 
+           <div id="woman_selector"> 
+            <input type="radio" name="gender" id="gender_woman" value="1"> <label for="gender_woman">여자</label> 
+           </div> 
+          </div> 
+          <table class="tbl type8 mt20"> 
+           <colgroup> 
+            <col style="width:7%"> 
+            <col style="width:*"> 
+            <col style="width:8%"> 
+            <col style="width:8%"> 
+            <col style="width:8%"> 
+            <col style="width:8%"> 
+           </colgroup> 
+           <thead> 
+            <tr> 
+             <th scope="col">구분</th> 
+             <th scope="col">내용</th> 
+             <th scope="col">스트레스를 전혀 받지 않았다</th> 
+             <th scope="col">스트레스를 아주 약간 받았다</th> 
+             <th scope="col">스트레스를 약간 받았다</th> 
+             <th scope="col">스트레스를 중간 정도 받았다</th> 
+             <th scope="col">스트레스를 많이 받았다</th> 
+             <th scope="col">스트레스를 굉장히 많이 받았다</th> 
+             <th scope="col">스트레스를 극도로 받았다</th> 
+  
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td>51. 찾는 물건이 상점에 없었다.</td> 
+             <td class="ac"><label for="env_51_never"><input type="radio" name="env_51" id="env_51_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_51_slightly"> <input type="radio" name="env_51" id="env_51_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_51_bit"> <input type="radio" name="env_51" id="env_51_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_51_midium"> <input type="radio" name="env_51" id="env_51_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_51_many"> <input type="radio" name="env_51" id="env_51_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_51_awfully"> <input type="radio" name="env_51" id="env_51_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_51_infinitely"> <input type="radio" name="env_51" id="env_51_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_51_null"> <input type="radio" name="env_51" id="env_51_null" value="0" title="해당사항 없음"></label></td> 
+            </tr> 
+            <tr> 
+             <td>52. 누군가와 경쟁하였다.</td> 
+             <td class="ac"><label for="env_52_never"><input type="radio" name="env_52" id="env_52_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_52_slightly"> <input type="radio" name="env_52" id="env_52_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_52_bit"> <input type="radio" name="env_52" id="env_52_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_52_midium"> <input type="radio" name="env_52" id="env_52_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_52_many"> <input type="radio" name="env_52" id="env_52_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_52_awfully"> <input type="radio" name="env_52" id="env_52_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_52_infinitely"> <input type="radio" name="env_52" id="env_52_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_52_null"> <input type="radio" name="env_52" id="env_52_null" value="0" title="해당사항 없음"></label></td>  
+            </tr> 
+          </tr> 
+            <tr> 
+             <td>53. 몸이 아팠다(혹은 불편했다).</td> 
+             <td class="ac"><label for="env_53_never"><input type="radio" name="env_53" id="env_53_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_53_slightly"> <input type="radio" name="env_53" id="env_53_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_53_bit"> <input type="radio" name="env_53" id="env_53_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_53_midium"> <input type="radio" name="env_53" id="env_53_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_53_many"> <input type="radio" name="env_53" id="env_53_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_53_awfully"> <input type="radio" name="env_53" id="env_53_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_53_infinitely"> <input type="radio" name="env_53" id="env_53_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_53_null"> <input type="radio" name="env_53" id="env_53_null" value="0" title="해당사항 없음"></label></td> 
+            </tr> 
+            <tr> 
+              <td>54. 누군가가 빤히 쳐다보았다.</td> 
+              <td class="ac"><label for="env_54_never"><input type="radio" name="env_54" id="env_54_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_54_slightly"> <input type="radio" name="env_54" id="env_54_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_54_bit"> <input type="radio" name="env_54" id="env_54_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_54_midium"> <input type="radio" name="env_54" id="env_54_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_54_many"> <input type="radio" name="env_54" id="env_54_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_54_awfully"> <input type="radio" name="env_54" id="env_54_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_54_infinitely"> <input type="radio" name="env_54" id="env_54_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_54_null"> <input type="radio" name="env_54" id="env_54_null" value="0" title="해당사항 없음"></label></td> 
+             </tr> 
+             <tr> 
+              <td>55. 먹을 것이나 일상용품이 다 떨어졌다.</td> 
+              <td class="ac"><label for="env_55_never"><input type="radio" name="env_55" id="env_55_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_55_slightly"> <input type="radio" name="env_55" id="env_55_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_55_bit"> <input type="radio" name="env_55" id="env_55_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_55_midium"> <input type="radio" name="env_55" id="env_55_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_55_many"> <input type="radio" name="env_55" id="env_55_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_55_awfully"> <input type="radio" name="env_55" id="env_55_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_55_infinitely"> <input type="radio" name="env_55" id="env_55_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_55_null"> <input type="radio" name="env_55" id="env_55_null" value="0" title="해당사항 없음"></label></td> 
+             </tr> 
+             <tr> 
+              <td>56. 하고 싶지 않은 일을 하였다.</td> 
+             <td class="ac"><label for="env_56_never"><input type="radio" name="env_56" id="env_56_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_56_slightly"> <input type="radio" name="env_56" id="env_56_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_56_bit"> <input type="radio" name="env_56" id="env_56_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_56_midium"> <input type="radio" name="env_56" id="env_56_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_56_many"> <input type="radio" name="env_56" id="env_56_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_56_awfully"> <input type="radio" name="env_56" id="env_56_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_56_infinitely"> <input type="radio" name="env_56" id="env_56_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_56_null"> <input type="radio" name="env_56" id="env_56_null" value="0" title="해당사항 없음"></label></td> 
+            </tr>
+            <tr> 
+              <td>57. 외모에 신경이 쓰였다.</td> 
+             <td class="ac"><label for="env_57_never"><input type="radio" name="env_57" id="env_57_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_57_slightly"> <input type="radio" name="env_57" id="env_57_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_57_bit"> <input type="radio" name="env_57" id="env_57_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_57_midium"> <input type="radio" name="env_57" id="env_57_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_57_many"> <input type="radio" name="env_57" id="env_57_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_57_awfully"> <input type="radio" name="env_57" id="env_57_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_57_infinitely"> <input type="radio" name="env_57" id="env_57_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_57_null"> <input type="radio" name="env_57" id="env_57_null" value="0" title="해당사항 없음"></label></td> 
+            </tr>
+            <tr> 
+              <td>58. 위험으로부터 간신히 벗어나는 경험을 했다.</td> 
+             <td class="ac"><label for="env_58_never"><input type="radio" name="env_58" id="env_58_never" value="7" title="스트레스를 전혀 받지 않았다"></label></td> 
+             <td class="ac"><label for="env_58_slightly"> <input type="radio" name="env_58" id="env_58_bit" value="6" title="스트레스를 아주 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_58_bit"> <input type="radio" name="env_58" id="env_58_bit" value="5" title="스트레스를 약간 받았다"></label></td> 
+             <td class="ac"><label for="env_58_midium"> <input type="radio" name="env_58" id="env_58_midium" value="4" title="스트레스를 중간 정도 받았다"></label></td> 
+             <td class="ac"><label for="env_58_many"> <input type="radio" name="env_58" id="env_58_many" value="3" title="스트레스를 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_58_awfully"> <input type="radio" name="env_58" id="env_58_sure" value="2" title="스트레스를 굉장히 많이 받았다"></label></td> 
+             <td class="ac"><label for="env_58_infinitely"> <input type="radio" name="env_58" id="env_58_infinitely" value="1" title="스트레스를 극도로 받았다"></label></td> 
+             <td class="ac"><label for="env_58_null"> <input type="radio" name="env_58" id="env_58_null" value="0" title="해당사항 없음"></label></td> 
+            </tr>
+           </tbody> 
+          </table> 
+          <div class="ac mt20"> <a id="btnReset" href="javascript:void(0);" class="btn type1 gray reset-ico mr5"> <span class="l"></span> <span class="msg">다시하기</span> <span class="r-icon"></span> </a> <a id="btnShowResult" href="javascript:void(0);" class="btn type1 blue list-ico"> <span class="l"></span> <span class="msg">결과보기</span> <span class="r-icon"></span> </a> 
+          </div> 
+          <div class="cl-float" style="margin-top: -32px;"> <a href="javascript:ezUtil.downloadAttachedFile('/health/healthrelateddatadownload?tab_no=2');" class="ico-disk fr ">관련자료 다운로드</a> 
+          </div> 
+         </form>
+         
+  </body>
+  </html>
