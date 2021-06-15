@@ -7,16 +7,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>practice page</title>
   <style>
-   
+   .tabs {   
+  min-height: 200px; /* This part sucks */
+  clear: both;
+}
+.tab {
+  float: left;
+}
+.tab label {
+  background: white; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px;
+}
+.tab [type=radio] {
+  display: none;   
+}
+.content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border-top: 4px solid #DADEDE;
+  margin-top: 4px;
+}
+[type=radio]:checked ~ label {
+  background: white;
+  padding-bottom: 0px;
+  border-bottom: 4px solid blue;
+  margin-bottom: 5px;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}
   </style>
-  <body>
-    <header>
-      <h1>하하</h1>
-    </header>
-    <div>
-    <img src="/images/KakaoTalk_20210613_134524567.png" style="width:100%; height:1020; margin-bottom: -30px;" />
-  </div>
-  </body>
-</body>
-
+ <body>
+  <div class="allTabs">
+    <div class="tab">
+      <input type="radio" id="tab-1" name="tab-group-1" checked>
+      <label for="tab-1">Tab One</label>
+        <div class="content">
+           stuff 1
+        </div> 
+    </div>
+    <div class="tab">
+      <input type="radio" id="tab-2" name="tab-group-1">
+      <label for="tab-2">Tab Two</label>  
+      <div class="content">
+         stuff 2
+      </div> 
+    </div> 
+    <div class="tab">
+      <input type="radio" id="tab-3" name="tab-group-1">
+      <label for="tab-3">Tab Three</label>
+      <div class="content">
+         stuff 3
+      </div> 
+    </div> 
+      
+    </body>
 </html>
