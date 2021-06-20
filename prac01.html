@@ -1,406 +1,110 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>practice01</title>
-    <style>
-      /*initialize*/
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Times New Roman", Times, serif;
-      }
-      li {
-        list-style: none;
-      }
-      a {
-        text-decoration: none;
-      }
-      img {
-        border: 0;
-      }
-      /*header*/
-      #main_header {
-        /*중앙 정렬*/
-        width: 960px;
-        margin: 0 auto;
-
-        /*절대 좌표*/
-        height: 160px;
-        position: relative;
-      }
-
-      #main_header > #title {
-        position: absolute;
-        left: 20px;
-        top: 30px;
-      }
-      #main_header > #main_gnb {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      #main_header > #main_lnb {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
-      /*title*/
-      #title {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      /*menu(1)*/
-      #main_gnb > ul {
-        overflow: hidden;
-      }
-      #main_gnb > ul > li {
-        float: left;
-      }
-      #main_gnb > ul > li > a {
-        display: block;
-        padding: 2px 10px;
-        border: 1px solid black;
-      }
-      #main_gnb > ul > li > a:hover {
-        background: black;
-        color: white;
-      }
-      #main_gnb > ul > li:first-child > a {
-        border-radius: 10px 0 0 10px;
-      }
-      #main_gnb > ul > li:last-child > a {
-        border-radius: 0 10px 10px 0;
-      }
-      /*menu(2)*/
-      #main_lnb > ul {
-        overflow: hidden;
-      }
-      #main_lnb > ul > li {
-        float: left;
-      }
-      #main_lnb > ul > li > a {
-        display: block;
-        padding: 10px 20px;
-        border: 1px solid black;
-      }
-      #main_lnb > ul > li > a:hover {
-        background: black;
-        color: white;
-      }
-      #main_lnb > ul > li:first-child > a {
-        border-radius: 10px 0 0 10px;
-      }
-      #main_lnb > ul > li:last-child > a {
-        border-radius: 0 10px 10px 0;
-      }
-      /*content*/
-      #content {
-        /*중앙 정렬*/
-        width: 960px;
-        margin: 0 auto;
-
-        /*수평 레이아웃 구성*/
-        overflow: hidden;
-      }
-      #content > #main_section {
-        width: 750px;
-        float: left;
-      }
-      #content > #main_aside {
-        width: 200px;
-        float: right;
-      }
-      /*main*/
-      #main_section > article.main_article {
-        margin-bottom: 10px;
-        padding: 20px;
-        border: 1px solid black;
-      }
-      /*side*/
-      /* 첫 번째 탭*/
-      input:nth-of-type(1) {
-        display: none;
-      }
-      input:nth-of-type(1) ~ div:nth-of-type(1) {
-        display: none;
-      }
-      input:nth-of-type(1):checked ~ div:nth-of-type(1) {
-        display: block;
-      }
-
-      /*두 번째 탭*/
-      input:nth-of-type(2) {
-        display: none;
-      }
-      input:nth-of-type(2) ~ div:nth-of-type(2) {
-        display: none;
-      }
-      input:nth-of-type(2):checked ~ div:nth-of-type(2) {
-        display: block;
-      }
-      /*탭 모양 구성*/
-      section.buttons {
-        overflow: hidden;
-      }
-      section.buttons > label {
-        /*수평 정렬*/
-        display: block;
-        float: left;
-
-        /*크기 및 글자 위치 지정*/
-        width: 100px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-
-        /*테두리 지정*/
-        box-sizing: border-box;
-        border: 1px solid black;
-
-        /*색상 지정*/
-        background: black;
-        color: white;
-      }
-      input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1) {
-        background: white;
-        color: black;
-      }
-      input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2) {
-        background: white;
-        color: black;
-      }
-
-      /*index*/
-      .item {
-        overflow: hidden;
-        padding: 10px;
-        border: 1px solid black;
-        border-top: none;
-      }
-      .thumbnail {
-        float: left;
-      }
-      .description {
-        float: left;
-        margin-left: 10px;
-      }
-      .description > strong {
-        display: block;
-        width: 120px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }.
-      /*footer*/
-      #main_footer {
-        /*중앙 정렬*/
-        width: 960px;
-        margin: 0 auto;
-        margin-bottom: 10px;
-
-        /*테두리*/
-        box-sizing: border-box;
-        padding: 10px;
-        border: 1px solid black;
-
-        /*글자 정렬*/
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <header id="main_header">
-      <div id="title">
-        <h1>Real-Brid's Pages</h1>
-        <h2>Welcome & Joy</h2>
-      </div>
-      <nav id="main_gnb">
-        <ul>
-          <li><a href="#">Web</a></li>
-          <li><a href="#">Mobile</a></li>
-          <li><a href="#">Game</a></li>
-          <li><a href="#">Simulation</a></li>
-          <li><a href="#">Data</a></li>
-        </ul>
-      </nav>
-      <nav id="main_lnb">
-        <ul>
-          <li><a href="#">HTML5</a></li>
-          <li><a href="#">CSS3</a></li>
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Jquery</a></li>
-          <li><a href="#">Node.js</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="content">
-      <section id="main_section">
-        <article class="main_article">
-          <h1>Main Article</h1>
-          <p>
-            Vivamus in congue justo. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Maecenas vulputate turpis
-            scelerisque feugiat sollicitudin. Nulla accumsan sed leo vel
-            ultrices. Maecenas pulvinar eu felis vitae mattis. Nullam efficitur
-            finibus quam, et convallis dui. Ut neque ipsum, cursus et neque
-            eget, posuere eleifend nisl. Aliquam convallis erat nec lectus
-            venenatis mollis. Nunc eget lectus lorem. Vestibulum eget risus et
-            mi mattis feugiat id dictum ipsum. Sed volutpat in turpis sagittis
-            dictum. Praesent sollicitudin, dolor nec auctor feugiat, urna enim
-            consequat tellus, et porta dolor est consequat urna. Ut sodales
-            ligula a venenatis efficitur. Vivamus vel commodo felis. Nulla ac
-            quam mollis, congue odio quis, dignissim dui.
-          </p>
-        </article>
-        <article class="main_article">
-          <h1>Main Article</h1>
-          <p>
-            Vivamus in congue justo. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Maecenas vulputate turpis
-            scelerisque feugiat sollicitudin. Nulla accumsan sed leo vel
-            ultrices. Maecenas pulvinar eu felis vitae mattis. Nullam efficitur
-            finibus quam, et convallis dui. Ut neque ipsum, cursus et neque
-            eget, posuere eleifend nisl. Aliquam convallis erat nec lectus
-            venenatis mollis. Nunc eget lectus lorem. Vestibulum eget risus et
-            mi mattis feugiat id dictum ipsum. Sed volutpat in turpis sagittis
-            dictum. Praesent sollicitudin, dolor nec auctor feugiat, urna enim
-            consequat tellus, et porta dolor est consequat urna. Ut sodales
-            ligula a venenatis efficitur. Vivamus vel commodo felis. Nulla ac
-            quam mollis, congue odio quis, dignissim dui.
-          </p>
-        </article>
-        <article class="main_article">
-          <h1>Main Article</h1>
-          <p>
-            Vivamus in congue justo. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Maecenas vulputate turpis
-            scelerisque feugiat sollicitudin. Nulla accumsan sed leo vel
-            ultrices. Maecenas pulvinar eu felis vitae mattis. Nullam efficitur
-            finibus quam, et convallis dui. Ut neque ipsum, cursus et neque
-            eget, posuere eleifend nisl. Aliquam convallis erat nec lectus
-            venenatis mollis. Nunc eget lectus lorem. Vestibulum eget risus et
-            mi mattis feugiat id dictum ipsum. Sed volutpat in turpis sagittis
-            dictum. Praesent sollicitudin, dolor nec auctor feugiat, urna enim
-            consequat tellus, et porta dolor est consequat urna. Ut sodales
-            ligula a venenatis efficitur. Vivamus vel commodo felis. Nulla ac
-            quam mollis, congue odio quis, dignissim dui.
-          </p>
-        </article>
-      </section>
-      <aside id="main_aside">
-        <input id="first" type="radio" name="tab" checked="checked" />
-        <input id="second" type="radio" name="tab" />
-        <section class="buttons">
-          <label for="first">First</label>
-          <label for="second">Second</label>
-        </section>
-        <div class="tab_item">
-          <ul>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Canvas</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Audio</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Video</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Semantic Web</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="tab_item">
-          <ul>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Transition</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Animation</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Border</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-            <li class="item">
-              <a href="#">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/45x45" />
-                </div>
-                <div class="description">
-                  <strong>HTML5 Box</strong>
-                  <p>2021-06-06</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-    <footer id="main_footer">
-      <h3>Vivamus in congue justo.</h3>
-      <address>
-        Orci varius natoque penatibus et magnis dis parturient montes
-      </address>
-    </footer>
-  </body>
-</html>
+<tr> 
+  <td>11. 윗사람과 대립이 있었다.</td> 
+  <td class="ac"><label for="env_11_never"><input type="radio" name="env_11" id="env_11_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_11_slightly"> <input type="radio" name="env_11" id="env_11_slightly" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_11_bit"> <input type="radio" name="env_11" id="env_11_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_11_midium"> <input type="radio" name="env_11" id="env_11_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_11_many"> <input type="radio" name="env_11" id="env_11_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_11_awfully"> <input type="radio" name="env_11" id="env_11_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_11_infinitely"> <input type="radio" name="env_11" id="env_11_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_11_none"><input type="radio" name="env_11" id="env_11_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr> 
+ <tr> 
+  <td>12. 난처해하거나 당황했었다.</td> 
+  <td class="ac"><label for="env_12_never"><input type="radio" name="env_12" id="env_12_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_12_slightly"> <input type="radio" name="env_12" id="env_12_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_12_bit"> <input type="radio" name="env_12" id="env_12_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_12_midium"> <input type="radio" name="env_12" id="env_12_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_12_many"> <input type="radio" name="env_12" id="env_12_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_12_awfully"> <input type="radio" name="env_12" id="env_12_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_12_infinitely"> <input type="radio" name="env_12" id="env_12_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_12_none"><input type="radio" name="env_12" id="env_12_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr> 
+ <tr> 
+  <td>13. 해야할 일을 엉성하게 처리하였다.</td> 
+  <td class="ac"><label for="env_13_never"><input type="radio" name="env_13" id="env_13_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_13_slightly"> <input type="radio" name="env_13" id="env_13_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_13_bit"> <input type="radio" name="env_13" id="env_13_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_13_midium"> <input type="radio" name="env_13" id="env_13_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_13_many"> <input type="radio" name="env_13" id="env_13_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_13_awfully"> <input type="radio" name="env_13" id="env_13_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_13_infinitely"> <input type="radio" name="env_13" id="env_13_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_13_none"><input type="radio" name="env_13" id="env_13_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr> 
+ <tr> 
+   <td>14. 여러 사람들 앞에서 발표하거나 어떤 일을 수행하였다.</td> 
+   <td class="ac"><label for="env_14_never"><input type="radio" name="env_14" id="env_14_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_14_slightly"> <input type="radio" name="env_14" id="env_14_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_14_bit"> <input type="radio" name="env_14" id="env_14_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_14_midium"> <input type="radio" name="env_14" id="env_14_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_14_many"> <input type="radio" name="env_14" id="env_14_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_14_awfully"> <input type="radio" name="env_14" id="env_14_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_14_infinitely"> <input type="radio" name="env_14" id="env_14_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_14_none"><input type="radio" name="env_14" id="env_14_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+  </tr> 
+  <tr> 
+   <td>15. 익숙하지 않은 일을 하였다. </td> 
+   <td class="ac"><label for="env_15_never"><input type="radio" name="env_15" id="env_15_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_15_slightly"> <input type="radio" name="env_15" id="env_15_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_15_bit"> <input type="radio" name="env_15" id="env_15_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_15_midium"> <input type="radio" name="env_15" id="env_15_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_15_many"> <input type="radio" name="env_15" id="env_15_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_15_awfully"> <input type="radio" name="env_15" id="env_15_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_15_infinitely"> <input type="radio" name="env_15" id="env_15_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_15_none"><input type="radio" name="env_15" id="env_15_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+  </tr> 
+  <tr> 
+   <td>16. 해야할 일을 마무리지을 수 없었다.</td> 
+  <td class="ac"><label for="env_16_never"><input type="radio" name="env_16" id="env_16_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_16_slightly"> <input type="radio" name="env_16" id="env_16_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_16_bit"> <input type="radio" name="env_16" id="env_16_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_16_midium"> <input type="radio" name="env_16" id="env_16_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_16_many"> <input type="radio" name="env_16" id="env_16_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_16_awfully"> <input type="radio" name="env_16" id="env_16_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_16_infinitely"> <input type="radio" name="env_16" id="env_16_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_16_none"><input type="radio" name="env_16" id="env_16_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr>
+ <tr> 
+   <td>17. 출근이나 약속시간에 늦었다.</td> 
+  <td class="ac"><label for="env_17_never"><input type="radio" name="env_17" id="env_17_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_17_slightly"> <input type="radio" name="env_17" id="env_17_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_17_bit"> <input type="radio" name="env_17" id="env_17_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_17_midium"> <input type="radio" name="env_17" id="env_17_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_17_many"> <input type="radio" name="env_17" id="env_17_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_17_awfully"> <input type="radio" name="env_17" id="env_17_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_17_infinitely"> <input type="radio" name="env_17" id="env_17_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_17_none"><input type="radio" name="env_17" id="env_17_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr>
+ <tr> 
+   <td>18. 운동/게임에서 제대로 실력발휘가 안되었다.</td> 
+  <td class="ac"><label for="env_18_never"><input type="radio" name="env_18" id="env_18_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_18_slightly"> <input type="radio" name="env_18" id="env_18_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_18_bit"> <input type="radio" name="env_18" id="env_18_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_18_midium"> <input type="radio" name="env_18" id="env_18_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_18_many"> <input type="radio" name="env_18" id="env_18_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_18_awfully"> <input type="radio" name="env_18" id="env_18_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_18_infinitely"> <input type="radio" name="env_18" id="env_18_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_18_none"><input type="radio" name="env_18" id="env_18_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr>
+ <tr> 
+   <td>19. 오늘의 모든 계획을 끝낼수 없었다.</td> 
+  <td class="ac"><label for="env_19_never"><input type="radio" name="env_19" id="env_19_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_19_slightly"> <input type="radio" name="env_19" id="env_19_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_19_bit"> <input type="radio" name="env_19" id="env_19_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_19_midium"> <input type="radio" name="env_19" id="env_19_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_19_many"> <input type="radio" name="env_19" id="env_19_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_19_awfully"> <input type="radio" name="env_19" id="env_19_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_19_infinitely"> <input type="radio" name="env_19" id="env_19_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_19_none"><input type="radio" name="env_19" id="env_19_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr>
+ <tr> 
+   <td>20. 매사가 엉망이었다.</td> 
+  <td class="ac"><label for="env_20_never"><input type="radio" name="env_20" id="env_20_never" value="1" title="전혀 받지 않았다"></label></td> 
+  <td class="ac"><label for="env_20_slightly"> <input type="radio" name="env_20" id="env_20_bit" value="2" title="아주 약간 받았다"></label></td> 
+  <td class="ac"><label for="env_20_bit"> <input type="radio" name="env_20" id="env_20_bit" value="3" title="약간 받았다"></label></td> 
+  <td class="ac"><label for="env_20_midium"> <input type="radio" name="env_20" id="env_20_midium" value="4" title="중간 정도 받았다"></label></td> 
+  <td class="ac"><label for="env_20_many"> <input type="radio" name="env_20" id="env_20_many" value="5" title="많이 받았다"></label></td> 
+  <td class="ac"><label for="env_20_awfully"> <input type="radio" name="env_20" id="env_20_awfully" value="6" title="굉장히 많이 받았다"></label></td> 
+  <td class="ac"><label for="env_20_infinitely"> <input type="radio" name="env_20" id="env_20_infinitely" value="7" title="극도로 받았다"></label></td> 
+  <td class="ac"><label for="env_20_none"><input type="radio" name="env_20" id="env_20_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
+ </tr>
